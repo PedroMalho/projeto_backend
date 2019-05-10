@@ -1,0 +1,111 @@
+{
+    "fotografia1": {
+        "id": "85ba67c4-3e2a-4fa9-af96-741d6869aec4",
+        "uploader": "Pedro",
+        "Title": "Cloudy Dreams",
+        "Description": "Foto de nuvens",
+        "Size": 28,
+        "Url": "www.pmphoto.com",
+        "Likes": 218,
+        "Dislikes": 15,
+        "Comments": [
+            "Parecem algodao doce."
+        ],
+        "Tags": [
+            "clouds",
+            "sky",
+            "dreams"
+        ]
+    },
+    "fotografia2": {
+        "id": "9e04ca8d-9387-48e3-af84-9a1114ed6f20",
+        "uploader": "Susana",
+        "Title": "Pastel Green",
+        "Description": "Foto de um relvado",
+        "Size": 14,
+        "Url": "www.greenphoto.com",
+        "Likes": 73,
+        "Dislikes": 6,
+        "Comments": [
+            "Relaxing picture"
+        ],
+        "Tags": [
+            "green",
+            "hilltop",
+            "grass",
+            "relax"
+        ]
+    },
+    "fotografia3": {
+        "id": "8decee73-198b-4423-bbe6-cf76e40",
+        "uploader": "André",
+        "Title": "Towering",
+        "Description": "Foto urbana",
+        "Size": 56,
+        "Url": "www.urban.com",
+        "Likes": 380,
+        "Dislikes": 53,
+        "Comments": [
+            "Makes me feel small."
+        ],
+        "Tags": [
+            "building",
+            "urban",
+            "concrete"
+        ]
+    },
+    "fotografia4": {
+        "uploader": "Pedro",
+        "Title": "Caminhando",
+        "Description": "Percorrendo uma estrada.",
+        "Size": 47,
+        "Url": "www.laurafotografia.pt",
+        "Likes": 13,
+        "Dislikes": 68,
+        "Comments": [
+            "Pouco original",
+            "Sem inspiração"
+        ],
+        "Tags": [
+            "estrada",
+            "viagem"
+        ],
+        "id": "cf21d8a0-735f-11e9-8159-a9a019f6b9bc"
+    },
+    "fotografia5": {
+        "uploader": "Alberta",
+        "Title": "Caminhando",
+        "Description": "Percorrendo uma estrada.",
+        "Size": 47,
+        "Url": "www.laurafotografia.pt",
+        "Likes": 13,
+        "Dislikes": 68,
+        "Comments": [
+            "Pouco original",
+            "Sem inspiração"
+        ],
+        "Tags": [
+            "estrada",
+            "viagem"
+        ],
+        "id": "d54f4460-735f-11e9-b2d5-f14a4fd0a2da"
+    },
+    "fotografia6": {
+        "uploader": "Pedro",
+        "Title": "Caminhando",
+        "Description": "Percorrendo uma estrada.",
+        "Size": 47,
+        "Url": "www.laurafotografia.pt",
+        "Likes": 13,
+        "Dislikes": 68,
+        "Comments": [
+            "Pouco original",
+            "Sem inspiração"
+        ],
+        "Tags": [
+            "estrada",
+            "viagem"
+        ],
+        "id": "6f2294b0-7361-11e9-9d13-5bbaf49411ad"
+    }
+}

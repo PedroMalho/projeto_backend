@@ -6,12 +6,12 @@
         "Description": "Foto de nuvens",
         "Size": 28,
         "Url": "www.pmphoto.com",
-        "Likes": 218,
+        "Likes": 219,
         "Dislikes": 15,
         "Comments": [
             "Parecem algodao doce."
         ],
-        "Tags": [
+        "tags": [
             "clouds",
             "sky",
             "dreams"
@@ -24,31 +24,32 @@
         "Description": "Foto de um relvado",
         "Size": 14,
         "Url": "www.greenphoto.com",
-        "Likes": 73,
+        "Likes": 74,
         "Dislikes": 6,
         "Comments": [
             "Relaxing picture"
         ],
-        "Tags": [
+        "tags": [
             "green",
             "hilltop",
             "grass",
-            "relax"
+            "relax",
+            "viagem"
         ]
     },
     "fotografia3": {
         "id": "8decee73-198b-4423-bbe6-cf76e40",
-        "uploader": "André",
+        "uploader": "Pedro",
         "Title": "Towering",
         "Description": "Foto urbana",
         "Size": 56,
         "Url": "www.urban.com",
-        "Likes": 380,
+        "Likes": 381,
         "Dislikes": 53,
         "Comments": [
             "Makes me feel small."
         ],
-        "Tags": [
+        "tags": [
             "building",
             "urban",
             "concrete"
@@ -60,13 +61,13 @@
         "Description": "Percorrendo uma estrada.",
         "Size": 47,
         "Url": "www.laurafotografia.pt",
-        "Likes": 13,
+        "Likes": 14,
         "Dislikes": 68,
         "Comments": [
             "Pouco original",
             "Sem inspiração"
         ],
-        "Tags": [
+        "tags": [
             "estrada",
             "viagem"
         ],
@@ -78,13 +79,13 @@
         "Description": "Percorrendo uma estrada.",
         "Size": 47,
         "Url": "www.laurafotografia.pt",
-        "Likes": 13,
+        "Likes": 14,
         "Dislikes": 68,
         "Comments": [
             "Pouco original",
             "Sem inspiração"
         ],
-        "Tags": [
+        "tags": [
             "estrada",
             "viagem"
         ],
@@ -96,13 +97,13 @@
         "Description": "Percorrendo uma estrada.",
         "Size": 47,
         "Url": "www.laurafotografia.pt",
-        "Likes": 13,
+        "Likes": 14,
         "Dislikes": 68,
         "Comments": [
             "Pouco original",
             "Sem inspiração"
         ],
-        "Tags": [
+        "tags": [
             "estrada",
             "viagem"
         ],

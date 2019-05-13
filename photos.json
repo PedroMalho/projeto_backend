@@ -24,7 +24,7 @@
         "Description": "Foto de um relvado",
         "Size": 14,
         "Url": "www.greenphoto.com",
-        "Likes": 79,
+        "Likes": 84,
         "Dislikes": 6,
         "Comments": [
             "Relaxing picture"
@@ -33,13 +33,12 @@
             "green",
             "hilltop",
             "grass",
-            "relax",
-            "viagem"
+            "relax"
         ]
     },
     "fotografia3": {
         "id": "8decee73-198b-4423-bbe6-cf76e40",
-        "uploader": "Pedro",
+        "uploader": "André",
         "Title": "Towering",
         "Description": "Foto urbana",
         "Size": 56,
@@ -56,7 +55,8 @@
         ]
     },
     "fotografia4": {
-        "uploader": "Pedro",
+        "id": "cf21d8a0-735f-11e9-8159-a9a019f6b9bc",
+        "uploader": "Paulo",
         "Title": "Caminhando",
         "Description": "Percorrendo uma estrada.",
         "Size": 47,
@@ -70,43 +70,6 @@
         "tags": [
             "estrada",
             "viagem"
-        ],
-        "id": "cf21d8a0-735f-11e9-8159-a9a019f6b9bc"
-    },
-    "fotografia5": {
-        "uploader": "Alberta",
-        "Title": "Caminhando",
-        "Description": "Percorrendo uma estrada.",
-        "Size": 47,
-        "Url": "www.laurafotografia.pt",
-        "Likes": 14,
-        "Dislikes": 68,
-        "Comments": [
-            "Pouco original",
-            "Sem inspiração"
-        ],
-        "tags": [
-            "estrada",
-            "viagem"
-        ],
-        "id": "d54f4460-735f-11e9-b2d5-f14a4fd0a2da"
-    },
-    "fotografia6": {
-        "uploader": "Pedro",
-        "Title": "Caminhando",
-        "Description": "Percorrendo uma estrada.",
-        "Size": 47,
-        "Url": "www.laurafotografia.pt",
-        "Likes": 14,
-        "Dislikes": 68,
-        "Comments": [
-            "Pouco original",
-            "Sem inspiração"
-        ],
-        "tags": [
-            "estrada",
-            "viagem"
-        ],
-        "id": "6f2294b0-7361-11e9-9d13-5bbaf49411ad"
+        ]
     }
 }

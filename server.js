@@ -26,7 +26,7 @@ function readFile(fileName) {
 
 // Lista todas as fotografias existentes no ficheiro photos.json
 app.get('/', function (req, res) {
-    res.send(readFile('./photos.json'));
+    res.send(JSON.parse(readFile('./photos.json')));
 });
 
 //Adicionar nova imagem e atualizar o ficheiro

@@ -1,15 +1,34 @@
+// CONSTANTES //
 const express = require('express');
 const bodyParser = require('body-parser');
-const uuidv1 = require('uuid/v1'); //Gera uuid
+const uuid = require('uuid/v1');
 const app = express();
 const fs = require('fs');
 
 
+// BODY PARSER NECESSÁRIO //
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
+// VARIÁVEL UUID //
+var uui = uuid();
 
-//Função para obter o length do ficheiro photos.json
+// INICIALIZAÇÃO DE SERVIDOR //
+const port = 3000
+app.listen(port, () => console.log(`APP A CORRER NA PORTA: ${port}!`));
+
+// FUNÇÕES LER FICHEIRO, ESCREVER NO FICHEIRO E OBTER TAMANHO DO FICHEIRO JSON //
+function readFile(fileName) {
+    var file = fs.readFileSync(fileName, 'utf-8');
+    return file;
+}
+
+function writeFile(fileName, text) {
+    fs.writeFileSync(fileName, text);
+}
+
 function photosLength(fileName) {
     var fotoKeys = Object.keys(fileName);
     var fotoLength = fotoKeys.length;
@@ -17,23 +36,15 @@ function photosLength(fileName) {
 };
 
 
-const port = 3000
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+// PARTE A // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| // PARTE A //
 
-
-function readFile(fileName) {
-    var file = fs.readFileSync(fileName, 'utf-8');
-    return file;
-}
-
-
-//Parte A alienea a) -> Lista todas as fotografias existentes no ficheiro photos.json
+//Parte A alíenea a) -> Lista todas as fotografias existentes no ficheiro photos.json
 app.get('/', function (req, res) {
     res.send(JSON.parse(readFile('./photos.json')));
 });
 
 
-// //Parte A alinea b) -> Adicionar nova imagem e atualizar o ficheiro
+// //Parte A alínea b) -> Adicionar nova imagem e atualizar o ficheiro
 app.post('/', function (req, res) {
     var foto = JSON.parse(readFile("./photos.json"));
 
@@ -41,7 +52,7 @@ app.post('/', function (req, res) {
     var fotoLength = fotoKeys.length;
 
     foto['fotografia' + (fotoLength + 1)] = req.body;
-    foto['fotografia' + (fotoLength + 1)].id = uuidv1();
+    foto['fotografia' + (fotoLength + 1)].id = uuid();
 
     var conteudo = JSON.stringify(foto, null, 4);
     fs.writeFile('./photos.json', conteudo, function (err) {
@@ -51,7 +62,7 @@ app.post('/', function (req, res) {
 });
 
 
-//Parte A alinea c) -> Seleccionar todas as fotografias de um uploader
+//Parte A alínea c) -> Seleccionar todas as fotografias de um uploader
 app.get('/uploader/:nome', function (req, res) {
     var foto = JSON.parse(readFile('./photos.json'));
 
@@ -70,7 +81,7 @@ app.get('/uploader/:nome', function (req, res) {
 });
 
 
-//Parte A alinea d) -> Incrementar o numero de likes e atualizar o ficheiro
+//Parte A alínea d) -> Incrementar o numero de likes e atualizar o ficheiro
 app.post('/like/:id', function (req, res) {
     var foto = JSON.parse(readFile('./photos.json'));
 
@@ -85,7 +96,7 @@ app.post('/like/:id', function (req, res) {
 });
 
 
-//Parte A alinea e) -> 
+//Parte A alínea e) -> Listar todas as fotografias com determinadas tags
 app.get('/search', function (req, res) {
     var foto = JSON.parse(readFile('./photos.json'));
 
@@ -108,3 +119,78 @@ app.get('/search', function (req, res) {
 
     res.send(resul);
 });
+
+
+// PARTE B // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| // PARTE B //
+
+
+// ALÍNEA A //
+app.get('/photos/:id', function (request, response) {
+    var id = request.params.id;
+    var file = readFile("photos.json");
+    var dados = JSON.parse(file);
+    response.send(dados[id]);
+});
+
+
+// ALÍNEA B //
+app.delete('/photos/:id', function (request, response) {
+    var id = request.params.id;
+    var file = readFile("photos.json");
+    var dados = JSON.parse(file);
+    // VERIFICA SE O ID DE FOTOGRAFIA POSTO NO URL EXISTE // 
+    if (dados[id] == null) {
+        response.send("FOTOGRAFIA NÃO EXISTE!");
+        // CASO NÃO EXISTA ELIMINA A FOTOGRAFIA // 
+    } else {
+        delete dados[id];
+        writeFile("photos.json", JSON.stringify(dados));
+        response.send("FOTOGRAFIA APAGADA!");
+    }
+});
+
+
+// ALÍNEA C //
+app.get('/photos/inc/:id', function (request, response) {
+    var id = request.params.id;
+    var file = readFile("photos.json");
+    var data = JSON.parse(file);
+    // INCREMENTA SEMPRE MAIS 1 AO NUMERO ANTERIOR //
+    data[id].Dislikes += 1;
+    writeFile("photos.json", JSON.stringify(data));
+    response.send(data[id]);
+});
+
+
+// ALÍNEA D //
+app.post('/photos/add', function (request, response) {
+    var id = request.body.id;
+    var newComment = request.body.Comments;
+    var file = readFile("photos.json");
+    var data = JSON.parse(file);
+    // ACRESCENTA O NOVO COMENTÁRIO NO OBJECTO //
+    data[id].Comments.push(newComment);
+    writeFile("photos.json", JSON.stringify(data));
+    response.send(data[id]);
+})
+
+
+// ALÍNEA E //
+app.get('/fotos/ordena', function (request, response) {
+    var file = readFile("photos.json");
+    var data = JSON.parse(file);
+    var res = [];
+    // ESCREVE DENTRO DO ARRAY VAZIO (RES) OS OBJECTOS //
+    for (y in data) {
+        res.push(data[y]);
+    }
+    // ORDENA POR ORDEM CRESCENTE COM SORT //
+    var ord = res.sort(function (a, b) {
+        if (a.Likes > b.Likes) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
+    response.send(ord);
+})
